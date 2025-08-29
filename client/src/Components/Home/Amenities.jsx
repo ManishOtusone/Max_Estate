@@ -51,6 +51,7 @@ const Amenities = () => {
         { src: Amphitheatre, name: 'Amphitheatre' },
         { src: Plaza, name: 'Community Plaza' }
     ];
+    const totalSlides = images.length;
 
     // --- Handle screen size ---
     useEffect(() => {
@@ -58,6 +59,14 @@ const Amenities = () => {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+        }, 5000); // 5 seconds
+
+        return () => clearInterval(interval); // cleanup on unmount
+    }, [totalSlides]);
 
     // --- Group items based on screen ---
     const groupedItems = isMobile
@@ -71,12 +80,27 @@ const Amenities = () => {
     const totalPages = groupedItems.length;
 
     // --- Pagination controls ---
-    const nextPage = () => setPage((p) => Math.min(p + 1, totalPages - 1));
-    const prevPage = () => setPage((p) => Math.max(p - 1, 0));
+
+    const nextPage = () => {
+        setPage(prev => (prev + 1) % totalPages);
+    };
+
+
+    const prevPage = () => {
+        setPage((prev) => (prev - 1 + totalPages) % totalPages);
+    };
 
     const handleDotClick = (index) => {
         setActiveIndex(index);
     };
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            nextPage();
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, [totalPages]);
 
     return (
         <div id="amenities">
@@ -97,7 +121,7 @@ const Amenities = () => {
 
                 {/* Slider */}
                 <div className="relative w-full overflow-hidden mt-20 px-2 sm:px-8 lg:px-[8rem]">
-                    <div className="overflow-hidden ">
+                    <div className="overflow-hidden">
                         <div
                             className="flex transition-transform duration-500 ease-in-out"
                             style={{ transform: `translateX(-${page * 100}%)` }}
@@ -105,7 +129,7 @@ const Amenities = () => {
                             {groupedItems.map((pageItems, idx) => (
                                 <div
                                     key={idx}
-                                    className="min-w-full grid grid-cols-1 md:grid-cols-3 gap-6 p-4 "
+                                    className="min-w-full grid grid-cols-1 md:grid-cols-3 gap-6 p-4"
                                 >
                                     {pageItems.map((item, i) => (
                                         <div
@@ -113,7 +137,7 @@ const Amenities = () => {
                                             className="relative w-full h-[32rem] rounded-lg overflow-hidden bg-[#f9f9e4] flex flex-col pt-5"
                                         >
                                             {/* Cover image */}
-                                            <div className="relative w- h-44">
+                                            <div className="relative w-full h-44">
                                                 <img
                                                     src={item.cover}
                                                     alt="Cover"
@@ -144,36 +168,31 @@ const Amenities = () => {
                         </div>
                     </div>
 
-
                     {/* Navigation */}
                     <button
                         onClick={prevPage}
-                        disabled={page === 0}
-                        className={`absolute top-50 left-2 sm:left-4 transform -translate-y-1/2 p-2 rounded-full z-10 transition-opacity duration-300 ${page === 0 ? "opacity-50 pointer-events-none" : "opacity-100"
-                            }`}
+                        className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 p-2 rounded-full z-10"
                     >
                         ◀
                     </button>
                     <button
                         onClick={nextPage}
-                        disabled={page === totalPages - 1}
-                        className={`absolute top-50 right-2 sm:right-4 transform -translate-y-1/2 p-2 rounded-full z-10 transition-opacity duration-300 ${page === totalPages - 1 ? "opacity-50 pointer-events-none" : "opacity-100"
-                            }`}
+                        className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 p-2 rounded-full z-10"
                     >
                         ▶
                     </button>
 
                     {/* Pagination Dots */}
-                    <div className="flex justify-center space-x-2">
+                    <div className="flex justify-center space-x-2 mt-4">
                         {Array.from({ length: totalPages }).map((_, idx) => (
                             <div
                                 key={idx}
-                                className={`w-3 h-3 rounded-full ${page === idx ? "bg-red-900" : "bg-gray-300"
-                                    }`}
+                                className={`w-3 h-3 rounded-full ${page === idx ? "bg-red-900" : "bg-gray-300"}`}
                             ></div>
                         ))}
                     </div>
                 </div>
+
             </div>
 
             {/* Section 2: Outdoor Amenities */}

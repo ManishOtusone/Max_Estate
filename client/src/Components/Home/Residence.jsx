@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import sectionTwo from '../../assets/section-two-blob-icon.png';
-import Buildings from '../../assets/Buildings.jpg';
+import Buildings from '../../assets/Buildings.png';
 import logoWhite from '../../assets/antara-logo-white.png';
 
 const Residence = () => {
@@ -22,7 +22,7 @@ const Residence = () => {
                     <div className="w-60 max-w-sm h-64 relative">
                         <img src={sectionTwo} alt="Background" className="object-contain rounded-lg" />
                         <div className="absolute w-60 h-60 rounded-full overflow-hidden top-40 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 blob-animate">
-                            <img src={Buildings} alt="Buildings" className="w-full h-full object-cover" />
+                            <img src={Buildings} alt="Buildings" className="w-full h-full object-cover " />
                         </div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@ const Residence = () => {
             <div className="flex-1 flex justify-center">
                 <div className="w-full max-w-lg h-[500px] relative">
                     <img src={sectionTwo} alt="Background" className="w-full h-full object-contain rounded-lg" />
-                    <div className="absolute w-80 h-80 rounded-full overflow-hidden top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    <div className="absolute w-80 h-80 rounded-full overflow-hidden top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 blob-animate">
                         <img src={Buildings} alt="Buildings" className="w-full h-full object-cover" />
                     </div>
                 </div>
