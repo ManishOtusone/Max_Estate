@@ -1,6 +1,4 @@
-/* ===========================
-   Blob Morph Animations
-   =========================== */
+
 @keyframes blob {
 
     0%,
@@ -45,56 +43,7 @@
     transition: all 1s ease-in-out;
 }
 
-/* Oval Blob 1 */
-@keyframes blob-oval1 {
 
-    0%,
-    100% {
-        border-top-left-radius: 70% 95%;
-        border-top-right-radius: 100% 70%;
-        border-bottom-left-radius: 85% 60%;
-        border-bottom-right-radius: 65% 90%;
-    }
-
-    50% {
-        border-radius: 65% / 85%;
-    }
-}
-
-.blob-oval1 {
-    animation: blob-oval1 3s ease-in-out infinite;
-    transition: all 1s ease-in-out;
-}
-
-/* Oval Blob 2 */
-@keyframes blob-oval2 {
-
-    0%,
-    100% {
-        border-top-left-radius: 65% 80%;
-        border-top-right-radius: 75% 55%;
-        border-bottom-left-radius: 78% 60%;
-        border-bottom-right-radius: 60% 85%;
-    }
-
-    50% {
-        border-top-left-radius: 60% 82%;
-        border-top-right-radius: 80% 50%;
-        border-bottom-left-radius: 80% 55%;
-        border-bottom-right-radius: 58% 88%;
-    }
-}
-
-.blob-oval2 {
-    animation: blob-oval2 3s ease-in-out infinite;
-    transition: all 1s ease-in-out;
-}
-
-/* ===========================
-   Extra Effects
-   =========================== */
-
-/* Smooth floating effect */
 @keyframes float {
 
     0%,
@@ -116,7 +65,7 @@
     animation-delay: 1s;
 }
 
-/* Subtle rotation (optional) */
+
 @keyframes slow-rotate {
     0% {
         transform: rotate(0deg);
@@ -168,20 +117,9 @@
         0 0 60px rgba(103, 19, 47, 0.5);
 }
 
-/* ===========================
-   Custom Font
-   =========================== */
-@font-face {
-    font-family: "domaine_displaymedium";
-    src: url("/fonts/domaine_displaymedium.woff2") format("woff2");
-}
-
-.custom-domaine {
-    font-family: "domaine_displaymedium", sans-serif;
-}
 
 
-/* Typologies.css */
+
 
 .slide-left-enter {
     opacity: 0;

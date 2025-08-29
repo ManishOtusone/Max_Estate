@@ -3,14 +3,16 @@ import LeftCover from '../../assets/LeftCover.png';
 import CenterCover from '../../assets/CenterCover.png';
 import RightCover from '../../assets/RightCover.png';
 
-import Dining from '../../assets/Dining.jpg';
-import Pool from '../../assets/Pool.jpg';
-import Gym from '../../assets/Gym.jpg';
-import CardRoom from '../../assets/CardRoom.jpg';
-import Reading from '../../assets/Reading.jpg';
-import Theaters from '../../assets/Theaters.jpg';
-import CreativeWorkshop from '../../assets/CreativeWorkshop.jpg';
-import Yoga from '../../assets/Yoga.jpg';
+import Dining from '../../assets/Dining.png';
+import Pool from '../../assets/Pool.png';
+import Gym from '../../assets/Gym.png';
+
+import CardRoom from '../../assets/CardRoom.png';
+import Reading from '../../assets/Reading.png';
+import Theaters from '../../assets/Theaters.png';
+
+import CreativeWorkshop from '../../assets/CreativeWorkshop.png';
+import Yoga from '../../assets/Yoga.png';
 import Resident from '../../assets/Resident.jpg';
 
 import SectionTwoBubble from '../../assets/section-two-bubbles.png';
@@ -146,7 +148,7 @@ const Amenities = () => {
 
                                                 {/* Circular image over the cover */}
                                                 <div className="absolute inset-0 flex justify-center items-center">
-                                                    <div className="w-42 h-42 sm:w-50 sm:h-50 rounded-full shadow-xl overflow-hidden flex justify-center items-center bg-white">
+                                                    <div className="w-42 h-42 sm:w-50 sm:h-50 rounded-full shadow-xl overflow-hidden flex justify-center items-center">
                                                         <img
                                                             src={item.img}
                                                             alt={item.title}
