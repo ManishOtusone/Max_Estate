@@ -1,0 +1,371 @@
+/* ===========================
+   Blob Morph Animations
+   =========================== */
+@keyframes blob {
+
+    0%,
+    100% {
+        border-top-left-radius: 55.9875% 58.6625%;
+        border-top-right-radius: 42.675% 34.0125%;
+        border-bottom-left-radius: 65.9875% 42.675%;
+        border-bottom-right-radius: 35.35% 64.65%;
+    }
+
+    20% {
+        border-top-left-radius: 60% 40%;
+        border-top-right-radius: 40% 60%;
+        border-bottom-left-radius: 55% 45%;
+        border-bottom-right-radius: 45% 55%;
+    }
+
+    40% {
+        border-top-left-radius: 43.44% 54.48%;
+        border-top-right-radius: 51.04% 46.56%;
+        border-bottom-left-radius: 53.44% 51.04%;
+        border-bottom-right-radius: 52.08% 47.92%;
+    }
+
+    60% {
+        border-top-left-radius: 70% 30%;
+        border-top-right-radius: 30% 70%;
+        border-bottom-left-radius: 60% 40%;
+        border-bottom-right-radius: 40% 60%;
+    }
+
+    80% {
+        border-top-left-radius: 50% 50%;
+        border-top-right-radius: 50% 50%;
+        border-bottom-left-radius: 45% 55%;
+        border-bottom-right-radius: 55% 45%;
+    }
+}
+
+.blob-animate {
+    animation: blob 8s ease-in-out infinite;
+    transition: all 1s ease-in-out;
+}
+
+/* Oval Blob 1 */
+@keyframes blob-oval1 {
+
+    0%,
+    100% {
+        border-top-left-radius: 70% 95%;
+        border-top-right-radius: 100% 70%;
+        border-bottom-left-radius: 85% 60%;
+        border-bottom-right-radius: 65% 90%;
+    }
+
+    50% {
+        border-radius: 65% / 85%;
+    }
+}
+
+.blob-oval1 {
+    animation: blob-oval1 3s ease-in-out infinite;
+    transition: all 1s ease-in-out;
+}
+
+/* Oval Blob 2 */
+@keyframes blob-oval2 {
+
+    0%,
+    100% {
+        border-top-left-radius: 65% 80%;
+        border-top-right-radius: 75% 55%;
+        border-bottom-left-radius: 78% 60%;
+        border-bottom-right-radius: 60% 85%;
+    }
+
+    50% {
+        border-top-left-radius: 60% 82%;
+        border-top-right-radius: 80% 50%;
+        border-bottom-left-radius: 80% 55%;
+        border-bottom-right-radius: 58% 88%;
+    }
+}
+
+.blob-oval2 {
+    animation: blob-oval2 3s ease-in-out infinite;
+    transition: all 1s ease-in-out;
+}
+
+/* ===========================
+   Extra Effects
+   =========================== */
+
+/* Smooth floating effect */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: float 4.5s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+/* Subtle rotation (optional) */
+@keyframes slow-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(1deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.animate-rotate {
+    animation: slow-rotate 8s ease-in-out infinite;
+}
+
+/* Animated gradient fill (optional) */
+.blob-gradient {
+    background: linear-gradient(135deg, #67132f, #a8325c, #d94f70);
+    background-size: 300% 300%;
+    animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Glow effect */
+.blob-glow {
+    box-shadow: 0 0 20px rgba(103, 19, 47, 0.6),
+        0 0 40px rgba(103, 19, 47, 0.4);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.blob-glow:hover {
+    box-shadow: 0 0 30px rgba(103, 19, 47, 0.8),
+        0 0 60px rgba(103, 19, 47, 0.5);
+}
+
+/* ===========================
+   Custom Font
+   =========================== */
+@font-face {
+    font-family: "domaine_displaymedium";
+    src: url("/fonts/domaine_displaymedium.woff2") format("woff2");
+}
+
+.custom-domaine {
+    font-family: "domaine_displaymedium", sans-serif;
+}
+
+
+/* Typologies.css */
+
+.slide-left-enter {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.slide-left-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.slide-left-exit {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-left-exit-active {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 500ms ease, transform 500ms ease;
+}
+
+/* Same for right-to-left animation */
+.slide-right-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.slide-right-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.slide-right-exit {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-right-exit-active {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 500ms ease, transform 500ms ease;
+}
+
+
+/* Container for the entire component */
+.z-20 {
+    z-index: 20;
+}
+
+.w-\[90\%\] {
+    width: 90%;
+}
+
+.md\:w-\[70\%\] {
+    width: 70%;
+}
+
+.lg\:w-\[80\%\] {
+    width: 80%;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.h-\[480px\] {
+    height: 480px;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mt-8 {
+    margin-top: 2rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.md\:flex-row {
+    flex-direction: row;
+}
+
+/* Map and slider sections */
+.map {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio */
+}
+
+.map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.location-map {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.map-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-slider-wrap {
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-slider {
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+/* Slider slides styling */
+.slides {
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
+    border: 2px solid transparent;
+}
+
+.slides:hover {
+    transform: scale(1.05);
+}
+
+.slides.is-selected {
+    border: 2px solid #3b82f6;
+    /* Blue border for the selected slide */
+    transform: scale(1.05);
+}
+
+.slides .wrap {
+    padding: 10px;
+}
+
+.slides .image img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+.slides .title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Flickity specific classes (simulated) */
+.flickity-viewport {
+    overflow: hidden;
+    height: 210px;
+}
+
+.flickity-slider {
+    display: flex;
+    white-space: nowrap;
+    /* Keep slides in a single line */
+    height: 100%;
+}
+
+.is-draggable {
+    cursor: grab;
+}

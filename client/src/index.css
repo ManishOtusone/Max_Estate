@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "domaine_displaymedium";
+  src: url("/fonts/domaine_displaymedium.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer base {
+  h2 {
+    font-family: "domaine_displaymedium", sans-serif;
+  }
+}
